@@ -1,0 +1,257 @@
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 700px;
+           
+  font-family: 'Cairo', sans-serif;
+
+
+
+        }
+ .main-content {
+    background-image: url(../images/Rectangle.png);
+     background-size: 3060.71px 3103.93px;
+    background-position: -647.73px -2450.58px;
+    background-repeat: no-repeat;
+    height: 3000px;
+}
+/* .main-content {
+    font-family: 'Arial', sans-serif;
+    background-image: url('../images/Rectangle.png');
+         background-size: 3611.71px 3235.93px;
+    background-position: -647.73px -2450.58px;
+    background-repeat: no-repeat;
+     height: 3000px;
+} */
+
+
+/* إذا كنت عايز تضيف محتوى فوق الخلفية */
+.content-wrapper {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+}
+ 
+        .container{
+            margin-top: 150px;
+        }
+
+        /* قسم الهواتف */
+        .phones-section {
+            /* flex: 1; */
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            z-index: 2;
+        }
+
+        .phones-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .phone {
+            position: relative;
+            margin-left: -60px; /* خليهم يركبوا فوق بعض */
+            transition: transform 0.3s ease;
+        }
+
+        .phone img {
+            width: 250px;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 20px;
+             filter: drop-shadow(0px 21px 79px rgba(0, 0, 0, 0.4));
+             transition-duration: 500ms;
+        }
+
+        .phone.left {
+            z-index: 1;
+        }
+
+        .phone.center {
+            z-index: 3; /* في المقدمة */
+        }
+
+        .phone.right {
+            z-index: 2;
+        }
+
+        .phones-container img:hover {
+            transform: scale(1.05);
+        }
+
+        /* قسم النصوص */
+        .text-section {
+            flex: 1;
+            padding: 0 50px;
+            color: white;
+            position: relative;
+            z-index: 2;
+        }
+
+        .main-title {
+            font-size: 4.5rem;
+            font-weight: bold;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            line-height: 1.8;
+            text-align: center;
+        }
+
+        .download-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.download-btn {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.download-btn img {
+    width: 170px; /* اضبط الحجم حسب صورتك */
+    height: auto;
+    display: block;
+    border-radius: 25px;
+}
+
+ .download-btn {
+    position: relative;
+    display: inline-block;
+    transition-duration: .3s;
+}
+
+.download-btn .btn-text {
+    position: absolute;
+    top: 50%;
+    left: 57%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.2;
+    pointer-events: none;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.download-btn .btn-text .line2 {
+    font-size: 14px;
+    padding-top: 5px;
+}
+
+
+ .download-btn:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 4px 8px rgba(0, 0, 0, 0.1),
+        0 6px 20px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.download-btn:hover img {
+    filter: brightness(1.1);
+}
+
+/* إذا كنت عايز تخفي النص وتعتمد على الصورة فقط */
+.download-btn.image-only .btn-text {
+    display: none;
+}
+
+/* دائرة الشعار الخارجة من الزاوية */
+ .corner-logo {
+    position: absolute;
+    top: 29px;
+    right: -21px;
+    width: 218px;
+    height: 77px;
+    display: flex
+;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+/* صورة الدايرة الخلفية */
+ .corner-logo .circle-bg {
+    position: absolute;
+    width: 151%;
+    height: 379%;
+    border-radius: 50% 50% 50% 50%;
+}
+
+/* صورة الشعار داخل الدائرة */
+ .corner-logo .logo-img {
+    width: 130px;
+    height: 123px;
+    position: relative;
+}
+ 
+
+        /* استجابة للموبايل */
+        @media (max-width: 768px) {
+            body::before {
+                border-bottom-left-radius: 50% 100px;
+                border-bottom-right-radius: 50% 100px;
+                height: 80vh;
+            }
+            
+            body::after {
+                border-bottom-left-radius: 60% 120px;
+                border-bottom-right-radius: 60% 120px;
+                height: 77vh;
+            }
+            
+            .container {
+                flex-direction: column-reverse;
+                padding: 20px;
+            }
+            
+            .text-section {
+                padding: 20px 0;
+                text-align: center;
+                color: black;
+            }
+            
+            .main-title {
+                font-size: 2.5rem;
+            }
+            
+            .download-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .phone img {
+                width: 180px;
+                height: 360px;
+            }
+            
+            .phone {
+                margin-left: -40px;
+            }
+        }
+  
