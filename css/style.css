@@ -12,24 +12,18 @@
 
 
         }
- .main-content {
+  .main-content {
     background-image: url(../images/Rectangle.png);
-     background-size: 3060.71px 3103.93px;
-    background-position: -647.73px -2450.58px;
+ 
+            background-size: 3162.71px 3075.93px;
+    background-position: -742.73px -2493.58px;
     background-repeat: no-repeat;
     height: 3000px;
+    position: absolute;
+    width: 100%;
+     
 }
-/* .main-content {
-    font-family: 'Arial', sans-serif;
-    background-image: url('../images/Rectangle.png');
-         background-size: 3611.71px 3235.93px;
-    background-position: -647.73px -2450.58px;
-    background-repeat: no-repeat;
-     height: 3000px;
-} */
-
-
-/* إذا كنت عايز تضيف محتوى فوق الخلفية */
+ 
 .content-wrapper {
     position: relative;
     z-index: 1;
@@ -37,7 +31,7 @@
 }
  
         .container{
-            margin-top: 150px;
+            margin-top: 50px;
         }
 
         /* قسم الهواتف */
@@ -97,7 +91,7 @@
         }
 
         .main-title {
-            font-size: 4.5rem;
+            font-size: 3.5rem;
             font-weight: bold;
             margin-bottom: 30px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
