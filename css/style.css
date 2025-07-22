@@ -277,7 +277,7 @@
         }
 
         /* Advanced Background */
-        .background-overlay {
+       #about .background-overlay {
             position: fixed;
             top: 0;
             left: 0;
@@ -449,18 +449,17 @@
         /* Story Cards */
         .story-grid {
     display: grid;
-    grid-template-columns: repeat(12, 1fr); /* 12 عمود */
+    grid-template-columns: repeat(12, 1fr);  
     gap: 40px;
     margin-bottom: 80px;
 }
 
 .story-grid > div {
-    grid-column: span 4; /* كل عنصر ياخد 4 أعمدة */
+    grid-column: span 4;  
     display: flex;
-  justify-content: center; /* توسيط أفقي */
-  align-items: center;     /* توسيط عمودي */
-  text-align: center;      /* لو في أكثر من سطر */
-  /* height: 200px;  */
+  justify-content: center;  
+  align-items: center;     
+  text-align: center;      
   flex-direction: column;
 }
 
