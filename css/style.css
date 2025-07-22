@@ -277,7 +277,7 @@
         }
 
         /* Advanced Background */
-        .background-overlay {
+       #about .background-overlay {
             position: fixed;
             top: 0;
             left: 0;
@@ -448,11 +448,20 @@
 
         /* Story Cards */
         .story-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-            margin-bottom: 80px;
-        }
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);  
+    gap: 40px;
+    margin-bottom: 80px;
+}
+
+.story-grid > div {
+    grid-column: span 4;  
+    display: flex;
+  justify-content: center;  
+  align-items: center;     
+  text-align: center;      
+  flex-direction: column;
+}
 
         .story-card {
             background: white;
