@@ -246,14 +246,11 @@
 }
  
 @media (min-width: 1919px) {
-    /* .main-content {
+    .main-content {
                  background-size: 3686px 3346px;
         background-position: -458px -2341px;
-    } */
-    .main-content {
-        background-size: 3686px 3346px;
-        background-position: -458px -2410px;
     }
+     
 
          .phones-container {
         margin-top: 78px;
