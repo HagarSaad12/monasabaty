@@ -5,8 +5,8 @@
       background-position: -237.73px -2333.58px;
       width: 100%;
       position: relative;
+      min-height: 100vh;
     }
-
     .content-wrapper {
       position: relative;
       z-index: 1;
@@ -250,9 +250,10 @@
                  background-size: 3686px 3346px;
         background-position: -458px -2341px;
     }
+     
 
          .phones-container {
-        margin-top: 110px;
+        margin-top: 78px;
     }
            .phone img {
         width: 384px;
