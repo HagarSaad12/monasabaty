@@ -17,60 +17,74 @@
 <body>
 
     <!-- HTML -->
-    <main class="main-content overflow-hidden">
-        <div class="corner-logo">
+     <main class="main-content">
+  <div class="corner-logo">
+    <img class="circle-bg" src="images/Ellipse 1.png" alt="دايرة الخلفية"
+         onerror="this.style.display='none';" />
+    <img class="logo-img" src="images/Group 36.png" alt="شعار مناسبني"
+         onerror="this.style.display='none'; this.parentElement.classList.add('fallback');" />
+  </div>
 
-            <img class="circle-bg" src="images/Ellipse 1.png" alt="دايرة الخلفية"
-                onerror="this.style.display='none';" />
+  <div class="container-fluid py-5 position-relative">
+    <div class="row p-5 align-items-center">
+      <div class="col-lg-5 col-md-12 homeCont">
+        <div class="text-section d-flex flex-column justify-content-end">
+          <h1 class="main-title">مناسباتي</h1>
+          <p class="subtitle">كل مناسباتك في تطبيق واحد</p>
 
-            <img class="logo-img" src="images/Group 36.png" alt="شعار مناسبني"
-                onerror="this.style.display='none'; this.parentElement.classList.add('fallback');" />
+           
+          <div class="download-buttons d-none d-md-flex">
+            <a href="#" class="download-btn playstore-btn">
+              <img src="images/Play Store.png" alt="Download from Play Store" />
+              <span class="btn-text">
+                <span class="line1">Got it from</span>
+                <span class="line2">Play Store</span>
+              </span>
+            </a>
+
+            <a href="#" class="download-btn playstore-btn">
+              <img src="images/App Store.png" alt="Download from App Store" />
+              <span class="btn-text">
+                <span class="line1">Got it from</span>
+                <span class="line2">App Store</span>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-7 col-md-12 mt-4">
+        <div class="phones-container">
+          <div class="phone left"><img src="images/5.png" alt="صورة 1"></div>
+          <div class="phone center"><img src="images/11.png" alt="صورة 2 (الوسط)"></div>
+          <div class="phone right"><img src="images/12.png" alt="صورة 3"></div>
         </div>
 
-        <div class="container py-5 position-relative">
-            <div class="row p-4 align-items-center">
-                <div class="col-lg-6 col-md-12 homeCont pe-xl-4 pe-0">
-                    <div class="text-section">
-                        <h1 class="main-title">مناسباتي</h1>
-                        <p class="subtitle">كل أماكن مناسباتك في تطبيق واحد</p>
+        <!-- نسخة الجوال: تظهر فقط على الشاشات الصغيرة -->
+         <div class="download-buttons d-flex flex-column justify-content-center align-items-center d-md-none mt-5">
+          <a href="#" class="download-btn playstore-btn">
+            <img src="images/Play Store.png" alt="Download from Play Store" />
+            <span class="btn-text">
+              <span class="line1">Got it from</span>
+              <span class="line2">Play Store</span>
+            </span>
+          </a>
 
-                        <div class="download-buttons">
-                            <a href="#" class="download-btn playstore-btn">
-                                <img src="images/Play Store.png" alt="Download from Play Store" />
-                                <span class="btn-text">
-                                    <span class="line1">Got it from</span>
-                                    <span class="line2">Play Store</span>
-                                </span>
-                            </a>
-
-                            <a href="#" class="download-btn playstore-btn">
-                                <img src="images/App Store.png" alt="Download from Play Store" />
-                                <span class="btn-text">
-                                    <span class="line1">Got it from</span>
-                                    <span class="line2">App Store</span>
-                                </span>
-                            </a>
-
-                        </div>
-                    </div>
-
-
-                </div>
-                <div class="col-lg-6 col-md-12 mt-4">
-                    <div class="phones-container">
-                        <div class="phone left"><img src="images/5.png" alt="صورة 1"></div>
-                        <div class="phone center"><img src="images/11.png" alt="صورة 2 (الوسط)"></div>
-                        <div class="phone right"><img src="images/12.png" alt="صورة 3"></div>
-                    </div>
-                </div>
-
-
-            </div>
+          <a href="#" class="download-btn playstore-btn">
+            <img src="images/App Store.png" alt="Download from App Store" />
+            <span class="btn-text">
+              <span class="line1">Got it from</span>
+              <span class="line2">App Store</span>
+            </span>
+          </a>
         </div>
-    </main>
+      </div>
+    </div>
+  </div>
+</main>
     <!-- ^ start About -->
     <div id="about">
-        
+
          <section class="about-section">
         <div class="wave-decoration"></div>
         <div class="floating-element"></div>
@@ -89,7 +103,8 @@
                 </h1>
                 
                 <div class="content-text">
-                    <p>
+                     <div class="container-fluid">
+                                            <p>
                         نحن فريق نؤمن أن كل مناسبة في حياتك، سواء كانت لحظة فرح أو لحظة وداع، تستحق أن تُحاط
                         بالاهتمام والراحة والتنظيم. من هنا وُلدت فكرتنا: تطبيق يُسهّل عليك حجز أماكن مناسباتك السعيدة والحزينة بكل سلاسة وتنظيم
                         ويمنحك المساحة لتشارك لحظاتك مع من تحب، دون عناء أو تشتت.
@@ -103,6 +118,7 @@
                         مع تطبيقنا، لن تكون وحدك في تنظيم فرحتك، أو في استقبال تعزيتك. نحن نرافقك خطوة بخطوة، لأننا
                         نؤمن أن المشاركة تصنع الفارق، وأن القرب في اللحظات المهمة هو ما يبقى.
                     </p>
+                     </div>
                 </div>
             </div>
         </div>
