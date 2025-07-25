@@ -246,14 +246,12 @@
 }
  
 @media (min-width: 1919px) {
-    .main-content {
-                 background-size: 3686px 3346px;
-        background-position: -458px -2341px;
+     .main-content {
+        background-size: 3686px 3346px;
+        background-position: -477px -2398px;
     }
-     
-
-         .phones-container {
-        margin-top: 78px;
+      .phones-container {
+        margin-top: 58px;
     }
            .phone img {
         width: 384px;
@@ -268,7 +266,7 @@
     }
          .main-title {
         font-size: 5rem;
-        padding-top: 118px;
+        padding-top: 48px;
     }
     .download-btn img {
              width: 245px;
