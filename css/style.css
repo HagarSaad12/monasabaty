@@ -247,24 +247,24 @@
  
 @media (min-width: 1919px) {
      .main-content {
-        background-size: 3686px 3346px;
-        background-position: -477px -2398px;
+        background-size: 3686px 3314px;
+        background-position: -458px -2341px;
     }
-      .phones-container {
+    .phones-container {
         margin-top: 58px;
     }
-           .phone img {
+    .phone img {
         width: 384px;
         height: 789px;
     }
-            .phone {
+    .phone {
         margin-left: -67px;
     }
-       .subtitle {
+    .subtitle {
         font-size: 2.5rem;
         padding-block: 40px;
     }
-         .main-title {
+    .main-title {
         font-size: 5rem;
         padding-top: 48px;
     }
@@ -377,16 +377,17 @@
     background: var(--soft-white);
     overflow-x: hidden;
 }
-.about-section {
-    min-height: 100vh;
-    position: relative;
-    background: linear-gradient(135deg,
-            var(--primary-teal) 0%,
-            var(--secondary-teal) 35%,
-            var(--light-teal) 70%,
-            var(--accent-teal) 100%);
-    overflow: hidden;
-}
+ .about-section {
+            min-height: 100vh;
+            position: relative;
+            background: linear-gradient(135deg,
+                rgba(56, 164, 191, 0.8) 0%,
+                rgba(62, 140, 164, 0.7) 35%,
+                rgba(77, 154, 177, 0.6) 70%,
+                rgba(197, 223, 228, 0.8) 100%);
+            overflow: hidden;
+            padding: 80px 0;
+        }
 /* Abstract Background Elements */
 .about-section::before {
     content: '';
@@ -820,3 +821,137 @@
         transform: translateX(-50%) translateY(-5px);
     }
 }
+
+/* * start prop section */
+#prop .main-container {
+             
+            overflow: hidden;
+        }
+
+      #prop  .section-title {
+            color: #2c3e50;
+            font-weight: 700;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+        }
+
+       #prop .phone-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+      #prop  .phone-mockup {
+             
+            position: relative;
+             
+            overflow: hidden;
+        }
+
+       #prop .phone-screen {
+             
+            position: absolute;
+             top: -134px;
+            left: 34px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            filter: drop-shadow(0px 21px 79px rgba(0, 0, 0, 0.4));
+        }
+
+       .w-85 {
+    width: 85% !important;
+}
+  
+ .feature-card {
+     
+    padding: 25px;
+    display: flex;
+    gap: 20px;
+    min-height: 230px;
+    justify-content: flex-end;
+}
+
+.feature-icon, .discount {
+  width: 60px;
+  height: 60px;
+  
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;  }
+
+ 
+.feature-title {
+  color: #2c3e50;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: end;
+}
+
+.feature-description {
+  color: #99a3ad;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin: 0;
+  text-align: end;
+}
+@media screen and (min-width: 1919px) {
+     #prop .phone-screen {
+     
+    top: -204px;
+    left: 51px;
+    
+}
+    
+}
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+                margin-bottom: 2rem;
+            }
+            
+            
+           #prop .phone-screen {
+                 
+                 top: -181px;
+                left: 34px;
+            }
+            
+            .feature-card {
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+            
+            .phone-container {
+                min-height: 400px;
+                margin-bottom: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .main-container {
+                margin: 10px;
+                border-radius: 15px;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+             
+            .phone-screen {
+                 
+                top: 20px;
+                left: 12px;
+            }
+        }
+
+         
+ 
