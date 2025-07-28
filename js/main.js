@@ -17,7 +17,7 @@
     const isMobile = window.innerWidth <= 991;
     
     // Set different scroll thresholds for mobile and desktop
-    const scrollThreshold = isMobile ? 30 : 50;
+    const scrollThreshold = isMobile ? 180 : 190;
     
     if (window.scrollY > scrollThreshold) {
         // Add scrolled class to navbar
