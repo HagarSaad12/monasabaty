@@ -17,7 +17,7 @@
     const isMobile = window.innerWidth <= 991;
     
     // Set different scroll thresholds for mobile and desktop
-    const scrollThreshold = isMobile ? 180 : 190;
+    const scrollThreshold = isMobile ? 10 : 20;
     
     if (window.scrollY > scrollThreshold) {
         // Add scrolled class to navbar
@@ -67,11 +67,6 @@ window.addEventListener("resize", function() {
         logo.style.transform = "translateY(-10px)";
     }
 });
- 
-
- 
-
-
         // Active link management
         const navLinks = document.querySelectorAll('.nav-link');
         navLinks.forEach(link => {
