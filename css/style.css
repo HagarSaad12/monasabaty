@@ -765,7 +765,7 @@
 }
 }
 /* * start navbar */
-  :root {
+ :root {
   --primary-color: #7fd2ebe6; /* لون البراند */
   --nav-bg-default: transparent;
   --nav-bg-scrolled: #ffffff;
@@ -778,10 +778,6 @@
 .navbar-custom {  
   transition: all 0.4s ease;
   padding: 15px 0;
-    background-color: var(--primary-color);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 20px rgba(78, 205, 196, 0.3);
   position: fixed;
   top: 0;
   width: 100%;
@@ -789,11 +785,12 @@
 }
 
 .navbar-custom.scrolled {
-  background-color: var(--nav-bg-scrolled);
+  background-color:  #001536;
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 4px 20px rgba(78, 205, 196, 0.3);
   padding: 10px 0;
+   z-index: 10000;
 }
 
 #navbarLogo {
@@ -810,25 +807,49 @@
 
 /* Logo Styling */
 .navbar-brand {
-  color: var(--nav-text-scrolled) !important;
+  color:  white !important;
   font-weight: bold;
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
+ .corner-logo2 .logo-img2 {
+    width: 32px;
+    height: 29px;
+    position: relative;
+}
+.corner-logo2 .circle-bg2 {
+    position: absolute;
+    width: 33%;
+    height: 102%;
+    border-radius: 50% 50% 50% 50%;
+}
+.corner-logo2 {
+    position: absolute;
+    /* top: 29px; */
+    /* right: -21px; */
+    width: 137px;
+    height: 43px;
+    display: flex
+;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
 .logo-icon {
-  width: 40px;
-  height: 40px;           
-  background-color: #4eafcd;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
+    width: 40px;
+    height: 40px;
+    /* background-color: #4eafcd; */
+    border-radius: 50%;
+    display: flex
+;
+    align-items: center;
+    justify-content: center;
+    color: white;
 }
 
-/* Navigation Links */
+/* Navigation Links - UPDATED */
 .navbar-nav .nav-link {
   color: var(--nav-text-default) !important;
   font-weight: 500;
@@ -838,10 +859,11 @@
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  background: transparent;
 }
 
 .navbar-custom.scrolled .nav-link {
-  color: var(--nav-text-scrolled) !important;
+  color:  white !important;
 }
 
 .navbar-nav .nav-link::before {
@@ -851,47 +873,68 @@
   left: 0;
   width: 0;
   height: 100%;
-  background: rgba(255, 255, 255, 0.2);
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.3), rgba(78, 175, 205, 0.3));
   transition: width 0.3s ease;
   z-index: -1;
 }
 
+/* UPDATED: Hover effect with gradient transition */
 .navbar-nav .nav-link:hover::before {
   width: 100%;
 }
 
 .navbar-nav .nav-link:hover {
-  color:    #0b637ee6 !important;
+  background: linear-gradient(45deg, #4eafcd, #7fd2eb, #00bcd4);
+  background-size: 200% 200%;
+  animation: gradientShift 0.3s ease forwards;
+  color: white !important;
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 15px rgba(78, 175, 205, 0.4);
 }
 
-.navbar-nav .nav-link.active {
-  background: rgba(255, 255, 255, 0.25) !important;
-  color:   #0b637ee6 !important;
-  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.2);
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
 }
 
-/* Dropdown Menu */
+/* REMOVED: Active link styles completely */
+/* .navbar-nav .nav-link.active styles have been removed */
+
+/* Dropdown Menu - UPDATED */
 .dropdown-menu {
-  background: var(--glass-bg);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 15px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  text-align: right;
+  opacity: 0;
+  transform: translateY(-10px) translateX(10px);
+  transition: all 0.3s ease;
+  visibility: hidden;
 }
 
+/* Show dropdown with animation */
+.dropdown:hover .dropdown-menu,
+.dropdown-menu.show {
+  opacity: 1;
+  transform: translateY(0) translateX(0);
+  visibility: visible;
+}
+
+/* UPDATED: Dropdown items with gradient text transition */
 .dropdown-item {
-  color: white;
+  color:  #00bcd4;
   transition: all 0.3s ease;
   border-radius: 8px;
   margin: 2px 8px;
+  position: relative;
+  overflow: hidden;
 }
-
-.dropdown-item:hover {
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-}
+ 
 
 /* Mobile Toggler - FIXED */
 .navbar-toggler {
@@ -966,21 +1009,18 @@
   }
 
   .navbar-nav .nav-link:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: linear-gradient(45deg, rgba(78, 175, 205, 0.3), rgba(127, 210, 235, 0.3));
     color: white !important;
     transform: translateY(-1px);
   }
 
-  .navbar-nav .nav-link.active {
-    background: rgba(255, 255, 255, 0.3) !important;
-    color: white !important;
-  }
-
-  /* Mobile dropdown */
+  /* Mobile dropdown - RIGHT ALIGNED */
   .dropdown-menu {
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
     margin-top: 10px;
+    right: 0 !important;
+    left: auto !important;
   }
 
   .dropdown-item {
@@ -989,8 +1029,8 @@
   }
 
   .dropdown-item:hover {
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(78, 175, 205, 0.2));
+    color: #4eafcd;
   }
 
   /* Logo visibility on mobile */
@@ -1008,18 +1048,14 @@
      
 }
 .corner-logo .circle-bg {
-    
     width: 85%;
     height: 235%;
-   
 } 
 .corner-logo {
-     
     top: 15px;
     right: -52px;
     width: 218px;
     height: 77px;
-    
 }
 }
 
@@ -1041,4 +1077,168 @@
   .navbar-brand {
     font-size: 0.9rem;
   }
+}
+/* * start features section */
+  #feature.background-wrapper {
+  padding: 80px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Background image as actual img element */
+#feature .background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-position: center;
+  z-index: 0;
+}
+
+/* Phone container positioned above background */
+#feature .phone-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   
+  position: relative;
+  z-index: 2;
+}
+
+/* Phone styling */
+ #feature .phone {
+    width: 452px;
+    height: 605px;
+    object-fit: contain;
+    filter: drop-shadow(0px 21px 79px rgba(0, 0, 0, 0.4));
+    position: relative;
+    /* left: -78px; */
+    z-index: -4;
+    top: -25px;
+}
+#feature .phone-left {
+    transform: rotate(6deg);
+    animation-delay: 0s;
+    position: absolute;
+    left: 133px;
+    z-index: 20px;
+}
+#feature .phone-right {
+    transform: rotate(-12deg);
+    animation-delay: -2s;
+    right: 64px;
+    top: -2px;
+    z-index: -2;
+}
+/* Animations */
+@keyframes phoneFloat {
+  0%, 100% { 
+    transform: translateY(0px) rotate(var(--base-rotation));
+  }
+  50% { 
+    transform: translateY(-10px) rotate(var(--base-rotation));
+  }
+}
+
+/* Set rotation variables */
+#feature .phone-left {
+  --base-rotation: -8deg;
+}
+
+#feature .phone-right {
+  --base-rotation: 8deg;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #feature .phone-right {
+        right: 76px;
+    }
+ 
+    #feature .phone {
+        left: 138px;
+    }
+ 
+ 
+}
+@media (max-width: 600px) {
+        #feature .phone {
+        left: 110px;
+        
+    width: 432px;
+    height: 566px;
+
+    }
+  }
+ @media (max-width: 480px) {
+    #feature .phone {
+        width: 375px;
+        height: 483px;
+    }
+ 
+    #feature .phone {
+        left: 87px;
+            top: -6px;
+    }
+
+    #feature .phone-right {
+        right: 59px;
+            top: 15px;
+    }
+}
+ @media (max-width: 375px) {
+        #feature .phone {
+        width: 302px;
+        height: 389px;
+        left: 70px;
+        top: 13px;
+    } 
+        #feature .phone-right {
+        right: 48px;
+        top: 24px;
+    }
+}
+@media (min-width:1919px){
+  #feature .phone-left {
+    left: 171px;
+}
+#feature .phone {
+             width: 538px;
+        height: 707px;
+}
+}
+@media (min-width: 2560px) {
+    #feature .phone {
+        width: 583px;
+        height: 736px;
+        /* top:-35px; */
+    }
+    #feature .phone-left {
+     top:-23px;
+}
+    #feature .phone-right {
+     top:11px;
+}
+}
+@media (min-width:960px) and (max-width: 1200px) {
+     #feature .phone {
+    width: 419px;
+    height: 562px;
+    top: -1px;
+}
+#feature .phone-left {
+    left: 101px;
+    
+}
+#feature .phone-right {
+    
+    right: 58px;
+    top: 16px;
+    
+}
 }
