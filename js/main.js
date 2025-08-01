@@ -89,3 +89,218 @@ window.addEventListener("resize", function() {
                 }
             });
         });
+// @media (min-width:314px) and (max-width: 389px) {
+//         #downloadApp .phone-section {
+    
+//     padding: 0px 0px;
+//     overflow: hidden;
+// }    
+//        .twoPhoneImg {
+//         width: 658px;
+//         left: -25px;
+//         top: 10px;
+//     } 
+     
+//  .dashed-line-2 {
+//     width: 300px;
+//     height: 300px;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+// }
+//     .icon-dollar-1 {
+//         top: 19%;
+//         left: 48%;
+//     }
+
+//  .icon-chart {
+//         top: 50%;
+//         right: 4%;
+//     }
+ 
+//          .icon-dollar-2 {
+//         bottom: 15%;
+//         left: 50%;
+//     }
+//         .icon-growth {
+//         top: 50%;
+//         left: 3%;
+//     }
+//   }
+//   @media (width:390px){
+//         .twoPhoneImg {
+//         width: 658px;
+//         left: -15px;
+//         top: 10px;
+//     }
+//      #downloadApp .phone-section {
+    
+//     padding: 0px 0px;
+//     overflow: hidden;
+// }    
+      
+     
+//  .dashed-line-2 {
+//     width: 300px;
+//     height: 300px;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+// }
+//          .icon-dollar-1 {
+//         top: 16%;
+//         left: 43%;
+//     }
+//         .icon-chart {
+//         top: 50%;
+//         right: 3%;
+//     }
+//         .icon-dollar-2 {
+//         bottom: 9%;
+//         left: 45%;
+//     }
+//         .icon-growth {
+//         top: 50%;
+//         left: 3%;
+//     }
+//   }
+//   @media (min-width:412px) and (max-width:539px){
+//         #downloadApp .phone-section {
+    
+//     padding: 0px 0px;
+//     overflow: hidden;
+// }    
+//             .twoPhoneImg {
+//         width: 658px;
+//         left: 1px;
+//         top: 10px;
+//     }
+     
+//  .dashed-line-2 {
+//     width: 300px;
+//     height: 300px;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+// }
+//          .icon-dollar-1 {
+//         top: 16%;
+//         left: 48%;
+//     }
+
+//       .icon-chart {
+//         top: 50%;
+//         right: 2%;
+//     }
+ 
+//              .icon-dollar-2 {
+//         bottom: 12%;
+//         left: 50%;
+//     }
+//             .icon-growth {
+//         top: 50%;
+//         left: 2%;
+//     }
+//   }
+//   @media (min-width:540px) and (max-width:767px){
+//         #downloadApp .phone-section {
+    
+//     padding: 0px 0px;
+//     overflow: hidden;
+// }    
+//              .twoPhoneImg {
+//         width: 806px;
+//         left: 24px;
+//         top: -42px;
+//     }
+//       .dashed-line-2 {
+//         width: 350px;
+//         height: 350px;
+//         top: 50%;
+//         left: 50%;
+//         transform: translate(-50%, -50%);
+//     }
+//         .icon-dollar-1 {
+//         top: 13%;
+//         left: 48%;
+//     }
+
+//       .icon-chart {
+//         top: 50%;
+//         right: 12%;
+//     }
+ 
+//           .icon-dollar-2 {
+//         bottom: 9%;
+//         left: 50%;
+//     }
+//             .icon-growth {
+//         top: 50%;
+//         left: 12%;
+//     }
+//   }
+   
+//   @media (min-width: 1919px) {
+//     .dashed-line-2 {
+//       width: 600px;
+//       height: 600px;
+//     }
+
+//     .twoPhoneImg {
+//       width: 1400px;
+//       left: 27px;
+//     }
+
+//     .icon-dollar-1 {
+//       top: 3%;
+//       left: 50%;
+//     }
+
+//     .icon-chart {
+//       top: 50%;
+//       right: 16%;
+//     }
+
+//     .icon-growth {
+//       top: 50%;
+//       left: 16%;
+//     }
+
+//     .icon-dollar-2 {
+
+//       bottom: 0%;
+
+//     }
+//   }
+//   @media (min-width: 2560px) {
+//         .dashed-line-2 {
+//         width: 700px;
+//         height: 700px;
+//     }
+//         .twoPhoneImg {
+//         width: 1550px;
+//         left: 132px;
+//     }
+//     .dashed-line {
+//     position: absolute;
+//     border: 5px dashed rgba(0, 0, 0, 0.5);
+//     border-radius: 50%;
+//     animation: rotate 20s linear infinite;
+// }
+//     .icon-dollar-1 {
+//         top: 5%;
+//         left: 50%;
+//     }
+//         .icon-chart {
+//         top: 50%;
+//         right: 20%;
+//     }
+//         .icon-dollar-2 {
+//         bottom: 3%;
+//     }
+//         .icon-growth {
+//         top: 50%;
+//         left: 21%;
+//     }
+
+//   }
