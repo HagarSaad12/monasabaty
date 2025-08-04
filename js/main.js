@@ -89,218 +89,114 @@ window.addEventListener("resize", function() {
                 }
             });
         });
-// @media (min-width:314px) and (max-width: 389px) {
-//         #downloadApp .phone-section {
+ document.addEventListener('DOMContentLoaded', function() {
+    // Get all carousel elements
+    const carousels = document.querySelectorAll('.carousel');
     
-//     padding: 0px 0px;
-//     overflow: hidden;
-// }    
-//        .twoPhoneImg {
-//         width: 658px;
-//         left: -25px;
-//         top: 10px;
-//     } 
-     
-//  .dashed-line-2 {
-//     width: 300px;
-//     height: 300px;
-//     top: 50%;
-//     left: 50%;
-//     transform: translate(-50%, -50%);
-// }
-//     .icon-dollar-1 {
-//         top: 19%;
-//         left: 48%;
-//     }
-
-//  .icon-chart {
-//         top: 50%;
-//         right: 4%;
-//     }
- 
-//          .icon-dollar-2 {
-//         bottom: 15%;
-//         left: 50%;
-//     }
-//         .icon-growth {
-//         top: 50%;
-//         left: 3%;
-//     }
-//   }
-//   @media (width:390px){
-//         .twoPhoneImg {
-//         width: 658px;
-//         left: -15px;
-//         top: 10px;
-//     }
-//      #downloadApp .phone-section {
+    carousels.forEach(carousel => {
+        const carouselInner = carousel.querySelector('.carousel-inner');
+        const carouselInstance = new bootstrap.Carousel(carousel);
+        
+        let isDragging = false;
+        let startX = 0;
+        let currentTranslate = 0;
+        let prevTranslate = 0;
+        
+        // Add drag functionality
+        carouselInner.addEventListener('mousedown', dragStart);
+        carouselInner.addEventListener('mousemove', dragMove);
+        carouselInner.addEventListener('mouseup', dragEnd);
+        carouselInner.addEventListener('mouseleave', dragEnd);
+        
+        // Touch events for mobile
+        carouselInner.addEventListener('touchstart', dragStart);
+        carouselInner.addEventListener('touchmove', dragMove);
+        carouselInner.addEventListener('touchend', dragEnd);
+        
+        function dragStart(e) {
+            isDragging = true;
+            carousel.classList.add('dragging');
+            startX = getPositionX(e);
+            carouselInstance.pause();
+            e.preventDefault();
+        }
+        
+        function dragMove(e) {
+            if (!isDragging) return;
+            
+            const currentPosition = getPositionX(e);
+            const diff = currentPosition - startX;
+            const resistance = 0.7;
+            currentTranslate = prevTranslate + (diff * resistance);
+            
+            carouselInner.style.transform = `translateX(${currentTranslate}px)`;
+        }
+        
+        function dragEnd(e) {
+            if (!isDragging) return;
+            
+            isDragging = false;
+            carousel.classList.remove('dragging');
+            
+            const movedBy = currentTranslate - prevTranslate;
+            const threshold = 50;
+            
+            carouselInner.style.transform = '';
+            
+            if (Math.abs(movedBy) > threshold) {
+                if (movedBy < 0) {
+                    carouselInstance.next();
+                } else {
+                    carouselInstance.prev();
+                }
+            }
+            
+            currentTranslate = 0;
+            prevTranslate = 0;
+            
+            setTimeout(() => {
+                carouselInstance.cycle();
+            }, 3000);
+        }
+        
+        function getPositionX(e) {
+            return e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
+        }
+        
+        // Pause carousel on hover
+        carousel.addEventListener('mouseenter', () => {
+            carouselInstance.pause();
+        });
+        
+        carousel.addEventListener('mouseleave', () => {
+            if (!isDragging) {
+                carouselInstance.cycle();
+            }
+        });
+    });
     
-//     padding: 0px 0px;
-//     overflow: hidden;
-// }    
-      
-     
-//  .dashed-line-2 {
-//     width: 300px;
-//     height: 300px;
-//     top: 50%;
-//     left: 50%;
-//     transform: translate(-50%, -50%);
-// }
-//          .icon-dollar-1 {
-//         top: 16%;
-//         left: 43%;
-//     }
-//         .icon-chart {
-//         top: 50%;
-//         right: 3%;
-//     }
-//         .icon-dollar-2 {
-//         bottom: 9%;
-//         left: 45%;
-//     }
-//         .icon-growth {
-//         top: 50%;
-//         left: 3%;
-//     }
-//   }
-//   @media (min-width:412px) and (max-width:539px){
-//         #downloadApp .phone-section {
+    // Keyboard navigation (works for currently visible carousel)
+    document.addEventListener('keydown', function(e) {
+        const visibleCarousel = document.querySelector('.carousel:not(.d-none)');
+        if (visibleCarousel) {
+            const carouselInstance = bootstrap.Carousel.getInstance(visibleCarousel);
+            if (e.key === 'ArrowLeft') {
+                carouselInstance.prev();
+            } else if (e.key === 'ArrowRight') {
+                carouselInstance.next();
+            }
+        }
+    });
     
-//     padding: 0px 0px;
-//     overflow: hidden;
-// }    
-//             .twoPhoneImg {
-//         width: 658px;
-//         left: 1px;
-//         top: 10px;
-//     }
-     
-//  .dashed-line-2 {
-//     width: 300px;
-//     height: 300px;
-//     top: 50%;
-//     left: 50%;
-//     transform: translate(-50%, -50%);
-// }
-//          .icon-dollar-1 {
-//         top: 16%;
-//         left: 48%;
-//     }
-
-//       .icon-chart {
-//         top: 50%;
-//         right: 2%;
-//     }
- 
-//              .icon-dollar-2 {
-//         bottom: 12%;
-//         left: 50%;
-//     }
-//             .icon-growth {
-//         top: 50%;
-//         left: 2%;
-//     }
-//   }
-//   @media (min-width:540px) and (max-width:767px){
-//         #downloadApp .phone-section {
-    
-//     padding: 0px 0px;
-//     overflow: hidden;
-// }    
-//              .twoPhoneImg {
-//         width: 806px;
-//         left: 24px;
-//         top: -42px;
-//     }
-//       .dashed-line-2 {
-//         width: 350px;
-//         height: 350px;
-//         top: 50%;
-//         left: 50%;
-//         transform: translate(-50%, -50%);
-//     }
-//         .icon-dollar-1 {
-//         top: 13%;
-//         left: 48%;
-//     }
-
-//       .icon-chart {
-//         top: 50%;
-//         right: 12%;
-//     }
- 
-//           .icon-dollar-2 {
-//         bottom: 9%;
-//         left: 50%;
-//     }
-//             .icon-growth {
-//         top: 50%;
-//         left: 12%;
-//     }
-//   }
-   
-//   @media (min-width: 1919px) {
-//     .dashed-line-2 {
-//       width: 600px;
-//       height: 600px;
-//     }
-
-//     .twoPhoneImg {
-//       width: 1400px;
-//       left: 27px;
-//     }
-
-//     .icon-dollar-1 {
-//       top: 3%;
-//       left: 50%;
-//     }
-
-//     .icon-chart {
-//       top: 50%;
-//       right: 16%;
-//     }
-
-//     .icon-growth {
-//       top: 50%;
-//       left: 16%;
-//     }
-
-//     .icon-dollar-2 {
-
-//       bottom: 0%;
-
-//     }
-//   }
-//   @media (min-width: 2560px) {
-//         .dashed-line-2 {
-//         width: 700px;
-//         height: 700px;
-//     }
-//         .twoPhoneImg {
-//         width: 1550px;
-//         left: 132px;
-//     }
-//     .dashed-line {
-//     position: absolute;
-//     border: 5px dashed rgba(0, 0, 0, 0.5);
-//     border-radius: 50%;
-//     animation: rotate 20s linear infinite;
-// }
-//     .icon-dollar-1 {
-//         top: 5%;
-//         left: 50%;
-//     }
-//         .icon-chart {
-//         top: 50%;
-//         right: 20%;
-//     }
-//         .icon-dollar-2 {
-//         bottom: 3%;
-//     }
-//         .icon-growth {
-//         top: 50%;
-//         left: 21%;
-//     }
-
-//   }
+    // Add hover effects to screens
+    const screens = document.querySelectorAll('.screen');
+    screens.forEach(screen => {
+        screen.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-5px) scale(1.02)';
+        });
+        
+        screen.addEventListener('mouseleave', function() {
+            this.style.transform = '';
+        });
+    });
+});
